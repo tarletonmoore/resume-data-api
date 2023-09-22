@@ -6,4 +6,11 @@ Rails.application.routes.draw do
   post "/students" => "students#create"
 
   post "/sessions" => "sessions#create"
+
+get "/experience" => "experience#index"
+get "/experience/:id" => "experience#show"
+post "/experience" => "experience#create"
+patch "/experience/:id" => "experience#update"
+delete "/experience:id" => "experience#destroy"
+
 end
