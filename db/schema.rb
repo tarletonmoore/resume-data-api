@@ -20,6 +20,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_22_183744) do
     t.string "url"
     t.string "screenshot"
     t.integer "student_id"
+  end
+
+  create_table "educations", force: :cascade do |t|
+    t.integer "student_id"
+    t.string "start_date"
+    t.string "end_date"
+    t.string "degree"
+    t.string "university_name"
+    t.text "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,5 +49,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_22_183744) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
 end
