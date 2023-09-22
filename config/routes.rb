@@ -13,4 +13,6 @@ post "/experience" => "experience#create"
 patch "/experience/:id" => "experience#update"
 delete "/experience:id" => "experience#destroy"
 
+  resources :educations
+
 end

@@ -15,10 +15,10 @@ class StudentsController < ApplicationController
       github: params[:github],
       photo: params[:photo],
     )
-    if user.save
-      render json: { message: "User created successfully" }, status: :created
+    if student.save
+      render json: { message: "Student created successfully" }, status: :created
     else
-      render json: { errors: user.errors.full_messages }, status: :bad_request
+      render json: { errors: student.errors.full_messages }, status: :bad_request
     end
   end
 end
