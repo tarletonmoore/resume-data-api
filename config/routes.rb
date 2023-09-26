@@ -3,15 +3,17 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get "/students" => "students#index"
+  get "/students/:id" => "students#show"
   post "/students" => "students#create"
 
   post "/sessions" => "sessions#create"
 
-  get "/experience" => "experience#index"
-  get "/experience/:id" => "experience#show"
-  post "/experience" => "experience#create"
-  patch "/experience/:id" => "experience#update"
-  delete "/experience/:id" => "experience#destroy"
+  get "/experiences" => "experiences#index"
+  get "/experiences/:id" => "experiences#show"
+  post "/experiences" => "experiences#create"
+  patch "/experiences/:id" => "experiences#update"
+  delete "/experiences/:id" => "experiences#destroy"
 
   get "/educations" => "educations#index"
   get "/educations/:id" => "educations#show"

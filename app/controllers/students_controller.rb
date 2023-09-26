@@ -1,4 +1,14 @@
 class StudentsController < ApplicationController
+  def index
+    @students = Student.all
+    render :index
+  end
+
+  def show
+    @student = Student.find_by(id: params[:id])
+    render :show
+  end
+
   def create
     student = Student.new(
       first_name: params[:first_name],
