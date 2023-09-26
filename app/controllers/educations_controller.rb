@@ -7,12 +7,13 @@ class EducationsController < ApplicationController
   def create
     @education = Education.create(
       student_id: current_user.id,
-      start_date: parms[:start_date],
+      start_date: params[:start_date],
       end_date: params[:end_date],
       degree: params[:degree],
       university_name: params[:university_name],
       details: params[:details]
     )
+    render :show
   end
 
   def show
@@ -24,7 +25,7 @@ class EducationsController < ApplicationController
     @education = Education.find_by(id: params[:id])
     @education.update(
       student_id: current_user.id,
-      start_date: parms[:start_date] || @education.start_date,
+      start_date: params[:start_date] || @education.start_date,
       end_date: params[:end_date] || @education.end_date,
       degree: params[:degree] || @education.degree,
       university_name: params[:university_name] || @education.university_name,
