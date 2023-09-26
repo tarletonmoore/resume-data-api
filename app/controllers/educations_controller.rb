@@ -24,7 +24,6 @@ class EducationsController < ApplicationController
   def update
     @education = Education.find_by(id: params[:id])
     @education.update(
-      student_id: current_user.id,
       start_date: params[:start_date] || @education.start_date,
       end_date: params[:end_date] || @education.end_date,
       degree: params[:degree] || @education.degree,
