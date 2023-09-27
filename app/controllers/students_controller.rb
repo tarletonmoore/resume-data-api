@@ -9,6 +9,11 @@ class StudentsController < ApplicationController
     render :show
   end
 
+  def current
+    @student = current_user
+    render :show
+  end
+
   def create
     student = Student.new(
       first_name: params[:first_name],
